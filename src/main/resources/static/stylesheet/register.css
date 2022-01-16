@@ -1,0 +1,33 @@
+.welcome-message-block .welcome-block{width: 100%;}
+
+.welcome-message-block h2 { text-align: center; color: #FFFFFF; text-transform: uppercase; font-size: 38px; margin: 40px 0px 20px 0px;}
+
+.welcome-message-block .welcome-block{margin-bottom: 30px; font-size: 30px; color: #FFFFFF; font-weight: 600; }
+
+.welcome-message-block .welcome-block span {margin-left: 10px}
+
+.register { width: 50%; margin-left: 100px;}
+
+.welcome-message-block {margin-right: 50px; position: absolute; right: 0;}
+
+#banner-img { position: relative; top : -40px;}
+
+.register label { display: block; font-size: 14px; color: #7E7E7E; font-weight: 600; margin: 15px 10px;}
+
+.register input { display: inline-block; width: 100%; min-width: 300px; padding: 10px 15px; border: none; border-radius: 50px; margin-bottom: 30px; box-shadow: 0px 0px 3px #9E9E9E; transition: all linear .3s;}
+
+.register input::placeholder {color: #FF1919; }
+
+.register button { margin-top: 30px; width: 200px; padding: 10px; border: none; border-radius: 50px; background: #FF1919; color: #FFFFFF; text-transform: uppercase; font-weight: 600; transition: all linear .3s;}
+
+.register button:hover { background: #FFFFFF; color: #FF1919; box-shadow: 0px 0px 3px #7E7E7E; cursor: pointer;}
+
+.welcome-message {position: absolute; top: 0; width: 80%; text-align: center; margin: 10%;}
+
+#code-block{height: calc(100vh - 100px);}
+
+#code-block p{font-size: 13px; font-weight: 600; color: #7E7E7E; margin: 10px 0px;}
+
+#code-block a{margin-top: 30px; text-decoration: none; font-size: 12px; background: #FF1919; padding: 10px 20px; color: #FFFFFF; text-transform: uppercase; font-weight: 600; border-radius: 50px; transition: all linear .3s;}
+
+#code-block a:hover{background: #FFFFFF; color: #FF1919; box-shadow: 0px 0px 3px #7E7E7E;}

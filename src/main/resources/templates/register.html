@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JBank - login</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/stylesheet/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/stylesheet/register.css}"/>
+    </head>
+    <body>
+    <header class="flex flex-between">
+        <div class="flex flex-center logo-block">
+            <img th:src="@{image/Logo@1x.png}" alt="Logo" height="40"/>
+            <span>J-Bank</span>
+        </div>
+        <div class="flex flex-center">
+            <div class="tool-bar">
+                <a th:href="@{/index}">Connexion</a>
+                <a th:href="@{/register}">Inscription</a>
+            </div>
+            <div class="clock">
+                <span>12/12/2022</span> - <span>14:12:01</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex flex-between">
+        <section class="register">
+
+            <div class="row flex flex-between">
+                <h2>Bienvenue</h2>
+            </div>
+
+            <h3>Inscription</h3>
+
+            <form th:action="@{/register}" method="POST" th:object="${createUserForm}">
+
+                <div class="flex flex-between flex-wrap">
+
+                    <div class="input-block">
+                        <label>Nom de famille * : </label>
+                        <input type="text" th:field="*{lastname}" placeholder="Nom de famille ..." required/>
+                    </div>
+
+                    <div class="input-block">
+                        <label>Prenom (s) * : </label>
+                        <input type="text" th:field="*{firstname}" placeholder="Prenom (s) ..." required/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-between flex-wrap">
+
+                    <div class="input-block">
+                        <label>Adrese mail * : </label>
+                        <input type="email" th:field="*{mail}" placeholder="Adresse mail ..." required/>
+                    </div>
+
+                    <div class="input-block">
+                        <label>Numero de telephone * : </label>
+                        <input type="tel" th:field="*{phoneNumber}" placeholder="Numero de telephone ..." required/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-between flex-wrap">
+
+                    <div class="input-block">
+                        <label>Nationalite * : </label>
+                        <input type="text" th:field="*{nationality}" placeholder="Nationalite ..." required/>
+                    </div>
+
+                    <div class="input-block">
+                        <label>Date de naissance * : </label>
+                        <input type="date" th:field="*{birthdate}" required>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-end">
+                    <button type="submit">Inscription</button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="welcome-message-block">
+            <img th:src="@{image/Banner.svg}" id="banner-img"/>
+            <div class="welcome-message">
+                <h2>Welcome</h2>
+                <p>Message</p>
+                <div class="flex flex-center welcome-block">
+                    <img th:src="@{image/Logo@2x.png}" alt="Logo" height="60"/>
+                    <span>J-Bank</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    </body>
+</html>

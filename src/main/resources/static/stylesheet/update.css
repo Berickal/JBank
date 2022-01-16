@@ -1,0 +1,15 @@
+.main-bloc { width: calc(100% - 350px); margin-top: 100px}
+
+.main-bloc .row-input{width: 600px;}
+
+.main-bloc .row-input .input-block label{font-size: 14px; margin-bottom: 10px; font-weight: 600; color: #5E5E5E; padding: 10px 0px;}
+
+.main-bloc .row-input .input-block input{margin-bottom: 20px; padding: 7px 15px; border-style: none; border-radius: 50px; box-shadow: 0px 0px 2px #7E7E7E;}
+
+.main-bloc .row-input .input-block input::placeholder{color: #FF1919;}
+
+.main-bloc button{background: #FF1919; color: white; font-size: 12px; padding: 7px 50px; border: none; margin-bottom: 20px; border-radius: 50px; font-weight: 600; text-transform: uppercase; transition: all linear .3s;}
+
+.main-bloc button:hover{background: white; color: #FF1919; cursor: pointer; box-shadow: 0px 0px 3px #7E7E7E;}
+
+#date-input{width: 233px;}

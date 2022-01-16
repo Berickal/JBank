@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JBank - login</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/stylesheet/style.css}"/>
+    </head>
+    <body>
+
+        <header class="flex flex-between">
+            <div class="flex flex-center logo-block">
+                <img th:src="@{/image/Logo@1x.png}" alt="Logo" height="40"/>
+                <span>J-Bank</span>
+            </div>
+            <div class="flex flex-center">
+                <div class="tool-bar">
+                    <a th:href="@{/index}">Connexion</a>
+                    <a th:href="@{/register}">Inscription</a>
+                </div>
+                <div class="clock">
+                    <span>12/12/2022</span> - <span>14:12:01</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <img th:src="@{/image/Banner.svg}"/>
+                <form class="connexion-form flex flex-column" th:action="@{/}" th:method="post" th:object="${connexionForm}">
+
+                    <h2>Welcome</h2>
+                    <div class="flex flex-center welcome-block">
+                        <img th:src="@{image/Logo@2x.png}" alt="Logo" height="60"/>
+                        <span>J-Bank</span>
+                    </div>
+
+                    <input type="email" name="mail" th:field="*{mail}" placeholder="Adresse mail"/>
+                    <input type="password" name="password" th:field="*{password}" placeholder="Mot de passe"/>
+
+                    <div th:if="${errorMessage}" th:utext="${errorMessage}" class="flex flex-center" id="errorMessage"></div>
+
+                    <div class="flex flex-end" id="password-forgotten">
+                        <a th:href="@{#}">Mot de passe oublie ?</a>
+                    </div>
+
+                    <button type="submit">Connexion</button>
+
+                    <div class="flex flex-around" id="no-account">
+                        <span>Pas de compte ?</span>
+                        <a th:href="@{/register}">Inscrivez vous ici</a>
+                    </div>
+
+                </form>
+            </div>
+        </main>
+
+    </body>
+</html>

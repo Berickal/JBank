@@ -1,0 +1,21 @@
+.transaction-bloc{padding: 10px 0px; background: #FFFFFF; height: calc(100vh - 70px);}
+
+main{ margin-right: 10px;}
+
+.transaction-bloc h2{font-size: 16px; text-align: center; color: #5E5E5E;}
+
+.transaction-bloc table{font-size: 12px; border-collapse: collapse}
+
+.transaction-bloc table th, .transaction-bloc table td{border: solid 1px #AEAEAE;}
+
+.transaction-bloc table th{padding: 10px 10px;}
+
+.transaction-bloc table td{padding: 7px 10px;}
+
+.transaction-bloc table tbody tr:nth-child(even){background: #DEDEDE;}
+
+.transaction-bloc table th:nth-child(2){min-width: 250px;}
+
+.transaction-bloc table tbody tr td:nth-child(5) {text-align: right; min-width: 90px}
+
+.transaction-bloc tbody tr:hover{background: #DEDEDE;}

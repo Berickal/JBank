@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <title>JBank - login</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/stylesheet/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/stylesheet/register.css}"/>
+    </head>
+
+    <body>
+
+        <header class="flex flex-between">
+            <div class="flex flex-center logo-block">
+                <img th:src="@{image/Logo@1x.png}" alt="Logo" height="40"/>
+                <span>J-Bank</span>
+            </div>
+            <div class="flex flex-center">
+                <div class="tool-bar">
+                    <a th:href="@{/disconnection}">Deconnexion</a>
+                </div>
+                <div class="clock">
+                    <span>12/12/2022</span> - <span>14:12:01</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex flex-column flex-center" id="code-block">
+            <p>Password : <span th:utext="${session.pass}"></span></p>
+            <p>Account number : <span th:utext="${session.account}"></span></p>
+            <a th:href="@{/dashboard}">Continuer</a>
+        </main>
+
+    </body>
+</html>

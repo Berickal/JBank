@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <link rel="stylesheet" th:href="@{/stylesheet/style.css}"/>
+        <link rel="stylesheet" th:href="@{/stylesheet/update.css}"/>
+    </head>
+    <body>
+        <header class="flex flex-between">
+            <div class="flex flex-center logo-block">
+                <img th:src="@{image/Logo@1x.png}" alt="Logo" height="40"/>
+                <span>J-Bank</span>
+            </div>
+            <div class="flex flex-center">
+                <div class="tool-bar">
+                    <a th:href="@{/disconnection}">Deconnexion</a>
+                </div>
+                <div class="clock">
+                    <span>12/12/2022</span> - <span>14:12:01</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex flex-between">
+
+            <nav class="flex flex-column">
+                <div class="user-profil">
+                    <div class="flex flex-center">
+                        <img th:src="@{image/user.png}"/>
+                    </div>
+                    <p>Nom : <span th:utext="${session.user.lastname}"></span></p>
+                    <p>Prenom (s) : <span th:utext="${session.user.firstname}"></span></p>
+                    <p>Numero de compte : <span th:utext="${session.accountDisplay}"></span></p>
+                    <p>Montant actuel : <span th:utext="${session.user.account.currentCredit}"></span> FCFA</p>
+                </div>
+                <ul>
+                    <li><a th:href="@{/dashboard}">Dashboard</a></li>
+                    <li><a th:href="@{/transaction}">New transaction</a></li>
+                    <li><a th:href="@{/update}">Modifier profil</a></li>
+                </ul>
+            </nav>
+
+            <form class="main-bloc flex flex-center flex-column" th:object="${updateForm}" th:action="@{/update}" method="post">
+
+                <h2>Modification de compte</h2>
+
+                <div class="flex flex-between flex-wrap  row-input">
+
+                    <div class="input-block flex flex-column">
+                        <label>Nom de famille : </label>
+                        <input type="text" th:field="*{lastname}" th:placeholder="${session.user.lastname}"/>
+                    </div>
+
+                    <div class="input-block flex flex-column">
+                        <label>Prenom (s) : </label>
+                        <input type="text" th:field="*{firstname}" th:placeholder="${session.user.firstname}"/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-between flex-wrap row-input">
+
+                    <div class="input-block flex flex-column">
+                        <label>Adrese mail : </label>
+                        <input type="email" th:value="${session.user.mail}" placeholder="Adresse mail ..." disabled/>
+                    </div>
+
+                    <div class="input-block flex flex-column">
+                        <label>Numero de telephone : </label>
+                        <input type="tel" th:value="${session.user.phoneNumber}" placeholder="Numero de telephone ..." disabled/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-between flex-wrap row-input">
+
+                    <div class="input-block flex flex-column">
+                        <label>Nationalite : </label>
+                        <input type="text" th:field="*{nationality}" th:placeholder="${session.user.nationality}"/>
+                    </div>
+
+                    <div class="input-block flex flex-column" id="date-input">
+                        <label>Date de naissance : </label>
+                        <input type="date" th:value="${session.user.birthdate}"/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-between flex-wrap row-input">
+
+                    <div class="input-block flex flex-column">
+                        <label>Mot de passe : </label>
+                        <input type="password" th:field="*{password}" placeholder="Password ..."/>
+                    </div>
+
+                    <div class="input-block flex flex-column">
+                        <label>Nouveau mot de passe: </label>
+                        <input type="password" th:field="*{newPassword}" placeholder="New Password ..."/>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-end">
+                    <button type="submit">Enregistrer</button>
+                </div>
+
+
+            </form>
+
+        </main>
+
+    </body>
+</html>
